@@ -1,5 +1,10 @@
-$body-color: blue;
+$body-color: red;
+@import '_fonts';
 
 body {
   color: $body-color;
+}
+h1 {
+  font-family: 'ProximaNovaSoft';
+  background-image: url('../assets/images/spinner.gif');
 }
