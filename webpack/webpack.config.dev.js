@@ -36,6 +36,15 @@ module.exports = merge(common, {
       {
         test: /\.s?css$/i,
         use: ['style-loader', 'css-loader?sourceMap=true', 'sass-loader']
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|svg|eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]'
+          }
+        }
       }
     ]
   }

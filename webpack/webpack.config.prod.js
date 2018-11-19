@@ -31,12 +31,33 @@ module.exports = merge(common, {
       },
       {
         test: /\.s?css/i,
-        use : [
+        use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
-      }
+      },
+      {
+        test: /\.(eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/fonts/[name].[ext]',
+            publicPath: '../'
+          }
+        }
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|svg)(\?.*)?$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/images/[name].[ext]',
+            publicPath: '../'
+
+          }
+        }
+      },
     ]
   }
 });
